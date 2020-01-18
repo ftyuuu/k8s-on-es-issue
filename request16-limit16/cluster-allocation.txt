@@ -1,0 +1,197 @@
+NAME                               READY   STATUS    RESTARTS   AGE    IP              NODE         NOMINATED NODE   READINESS GATES
+elasticsearch-sample-es-client-0   1/1     Running   0          115s   10.16.33.122    172.24.5.7   <none>           <none>
+elasticsearch-sample-es-data-0     1/1     Running   0          115s   10.16.33.96     172.24.5.7   <none>           <none>
+elasticsearch-sample-es-data-1     1/1     Running   0          115s   10.16.184.248   172.24.5.4   <none>           <none>
+elasticsearch-sample-es-data-2     1/1     Running   0          115s   10.16.215.159   172.24.5.5   <none>           <none>
+elasticsearch-sample-es-master-0   1/1     Running   0          115s   10.16.184.194   172.24.5.4   <none>           <none>
+
+Name:               elasticsearch-sample-es-master-0
+Namespace:          nes-elasticsearch
+Priority:           0
+PriorityClassName:  <none>
+Node:               172.24.5.4/172.24.5.4
+Start Time:         Sat, 18 Jan 2020 12:47:22 +0800
+Labels:             common.k8s.elastic.co/type=elasticsearch
+                    controller-revision-hash=elasticsearch-sample-es-master-56fc7c65f
+                    elasticsearch.k8s.elastic.co/cluster-name=elasticsearch-sample
+                    elasticsearch.k8s.elastic.co/config-hash=2534984176
+                    elasticsearch.k8s.elastic.co/http-scheme=http
+                    elasticsearch.k8s.elastic.co/node-data=false
+                    elasticsearch.k8s.elastic.co/node-ingest=false
+                    elasticsearch.k8s.elastic.co/node-master=true
+                    elasticsearch.k8s.elastic.co/node-ml=true
+                    elasticsearch.k8s.elastic.co/statefulset-name=elasticsearch-sample-es-master
+                    elasticsearch.k8s.elastic.co/version=6.8.4
+                    statefulset.kubernetes.io/pod-name=elasticsearch-sample-es-master-0
+Annotations:        cni.projectcalico.org/podIP: 10.16.184.194/32
+                    update.k8s.elastic.co/timestamp: 2020-01-18T04:48:23.81080165Z
+Status:             Running
+IP:                 10.16.184.194
+Controlled By:      StatefulSet/elasticsearch-sample-es-master
+Init Containers:
+  elastic-internal-init-filesystem:
+    Container ID:  docker://8f49e32c2d9c0ccab8a50e5284eeead7db19afd5aab7c70078973fcd249b5160
+    Image:         docker.elastic.co/elasticsearch/elasticsearch:6.8.4
+    Image ID:      docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:f26d2945f1798567e1e63297e3c55ebade0b3202211f23276a7c815a8e496f2d
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      bash
+      -c
+      /mnt/elastic-internal/scripts/prepare-fs.sh
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Sat, 18 Jan 2020 12:47:23 +0800
+      Finished:     Sat, 18 Jan 2020 12:47:26 +0800
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      POD_IP:     (v1:status.podIP)
+      POD_NAME:  elasticsearch-sample-es-master-0 (v1:metadata.name)
+      POD_IP:     (v1:status.podIP)
+      POD_NAME:  elasticsearch-sample-es-master-0 (v1:metadata.name)
+    Mounts:
+      /mnt/elastic-internal/elasticsearch-bin-local from elastic-internal-elasticsearch-bin-local (rw)
+      /mnt/elastic-internal/elasticsearch-config from elastic-internal-elasticsearch-config (ro)
+      /mnt/elastic-internal/elasticsearch-config-local from elastic-internal-elasticsearch-config-local (rw)
+      /mnt/elastic-internal/elasticsearch-plugins-local from elastic-internal-elasticsearch-plugins-local (rw)
+      /mnt/elastic-internal/probe-user from elastic-internal-probe-user (ro)
+      /mnt/elastic-internal/scripts from elastic-internal-scripts (ro)
+      /mnt/elastic-internal/transport-certificates from elastic-internal-transport-certificates (ro)
+      /mnt/elastic-internal/unicast-hosts from elastic-internal-unicast-hosts (ro)
+      /mnt/elastic-internal/xpack-file-realm from elastic-internal-xpack-file-realm (ro)
+      /usr/share/elasticsearch/config/http-certs from elastic-internal-http-certificates (ro)
+      /usr/share/elasticsearch/data from elasticsearch-data (rw)
+      /usr/share/elasticsearch/logs from elasticsearch-logs (rw)
+  sysctl:
+    Container ID:  docker://bf6599f8bf503cfc970c018e55d5f377e2d0d7ee078c5c9473c7df1a76b3003b
+    Image:         docker.elastic.co/elasticsearch/elasticsearch:6.8.4
+    Image ID:      docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:f26d2945f1798567e1e63297e3c55ebade0b3202211f23276a7c815a8e496f2d
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sh
+      -c
+      sysctl -w vm.max_map_count=262144
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Sat, 18 Jan 2020 12:47:27 +0800
+      Finished:     Sat, 18 Jan 2020 12:47:27 +0800
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      POD_IP:     (v1:status.podIP)
+      POD_NAME:  elasticsearch-sample-es-master-0 (v1:metadata.name)
+    Mounts:
+      /mnt/elastic-internal/elasticsearch-config from elastic-internal-elasticsearch-config (ro)
+      /mnt/elastic-internal/probe-user from elastic-internal-probe-user (ro)
+      /mnt/elastic-internal/scripts from elastic-internal-scripts (ro)
+      /mnt/elastic-internal/unicast-hosts from elastic-internal-unicast-hosts (ro)
+      /mnt/elastic-internal/xpack-file-realm from elastic-internal-xpack-file-realm (ro)
+      /usr/share/elasticsearch/bin from elastic-internal-elasticsearch-bin-local (rw)
+      /usr/share/elasticsearch/config from elastic-internal-elasticsearch-config-local (rw)
+      /usr/share/elasticsearch/config/http-certs from elastic-internal-http-certificates (ro)
+      /usr/share/elasticsearch/config/transport-certs from elastic-internal-transport-certificates (ro)
+      /usr/share/elasticsearch/data from elasticsearch-data (rw)
+      /usr/share/elasticsearch/logs from elasticsearch-logs (rw)
+      /usr/share/elasticsearch/plugins from elastic-internal-elasticsearch-plugins-local (rw)
+Containers:
+  elasticsearch:
+    Container ID:   docker://45a24889832c123cbdd76ee561d8eed448ec45ef45d49ac68bd1ec99ebfd81a6
+    Image:          docker.elastic.co/elasticsearch/elasticsearch:6.8.4
+    Image ID:       docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:f26d2945f1798567e1e63297e3c55ebade0b3202211f23276a7c815a8e496f2d
+    Ports:          9200/TCP, 9300/TCP
+    Host Ports:     0/TCP, 0/TCP
+    State:          Running
+      Started:      Sat, 18 Jan 2020 12:47:28 +0800
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     8
+      memory:  16Gi
+    Requests:
+      cpu:      8
+      memory:   16Gi
+    Readiness:  exec [bash -c /mnt/elastic-internal/scripts/readiness-probe-script.sh] delay=10s timeout=5s period=5s #success=1 #failure=3
+    Environment:
+      ES_JAVA_OPTS:              -Xms4g -Xmx4g
+      NSS_SDB_USE_CACHE:         no
+      POD_IP:                     (v1:status.podIP)
+      POD_NAME:                  elasticsearch-sample-es-master-0 (v1:metadata.name)
+      PROBE_PASSWORD_FILE:       /mnt/elastic-internal/probe-user/elastic-internal-probe
+      PROBE_USERNAME:            elastic-internal-probe
+      READINESS_PROBE_PROTOCOL:  http
+    Mounts:
+      /mnt/elastic-internal/elasticsearch-config from elastic-internal-elasticsearch-config (ro)
+      /mnt/elastic-internal/probe-user from elastic-internal-probe-user (ro)
+      /mnt/elastic-internal/scripts from elastic-internal-scripts (ro)
+      /mnt/elastic-internal/unicast-hosts from elastic-internal-unicast-hosts (ro)
+      /mnt/elastic-internal/xpack-file-realm from elastic-internal-xpack-file-realm (ro)
+      /usr/share/elasticsearch/bin from elastic-internal-elasticsearch-bin-local (rw)
+      /usr/share/elasticsearch/config from elastic-internal-elasticsearch-config-local (rw)
+      /usr/share/elasticsearch/config/http-certs from elastic-internal-http-certificates (ro)
+      /usr/share/elasticsearch/config/transport-certs from elastic-internal-transport-certificates (ro)
+      /usr/share/elasticsearch/data from elasticsearch-data (rw)
+      /usr/share/elasticsearch/logs from elasticsearch-logs (rw)
+      /usr/share/elasticsearch/plugins from elastic-internal-elasticsearch-plugins-local (rw)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  elasticsearch-data:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  elasticsearch-data-elasticsearch-sample-es-master-0
+    ReadOnly:   false
+  elastic-internal-elasticsearch-bin-local:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:  <unset>
+  elastic-internal-elasticsearch-config:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  elasticsearch-sample-es-master-es-config
+    Optional:    false
+  elastic-internal-elasticsearch-config-local:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:  <unset>
+  elastic-internal-elasticsearch-plugins-local:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:  <unset>
+  elastic-internal-http-certificates:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  elasticsearch-sample-es-http-certs-internal
+    Optional:    false
+  elastic-internal-probe-user:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  elasticsearch-sample-es-internal-users
+    Optional:    false
+  elastic-internal-scripts:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      elasticsearch-sample-es-scripts
+    Optional:  false
+  elastic-internal-transport-certificates:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  elasticsearch-sample-es-transport-certificates
+    Optional:    false
+  elastic-internal-unicast-hosts:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      elasticsearch-sample-es-unicast-hosts
+    Optional:  false
+  elastic-internal-xpack-file-realm:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  elasticsearch-sample-es-xpack-file-realm
+    Optional:    false
+  elasticsearch-logs:
+    Type:        EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:   <unset>
+QoS Class:       Guaranteed
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
